@@ -73,22 +73,17 @@ async function main(){
     const [response] = await client.recognize(request);
     const transcription = response.results.map(result =>
         result.alternatives[0].transcript).join('\n');
-    fs.writeFile('../full_transcriptions/' + "input.txt", transcription, 'ascii', function (err) {
+    fs.writeFileSync('../full_transcriptions/' + "input.txt", transcription, 'ascii', function (err) {
         if (err) return console.log(err);
         console.log("Transcription written to "+  "input.txt");
     });
 
 
-    //console.log("Running python");
-    //const spawn = require("child_process").spawn;
+    console.log("Running python");
+    const spawn = require("child_process").spawn;
     //make sure right python is called
-    //const pythonProcess = spawn('python3',["../summarize.py", "input.txt"]);
+    const pythonProcess = spawn('python3',["../python/summarize.py", "input.txt"]);
 
-    //pythonProcess.stdout.on('data', (data) => {
-    //    console.log(data);
-    //});
-
-    console.log(req.file.path);
     fs.unlink(req.file.path, (err) => {
         if (err) return console.error(err);
         console.log("Temporary audio files deleted")
