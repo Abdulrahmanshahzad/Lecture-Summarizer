@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, '/home/saumik/audioUpload')
+        cb(null, '/Users/anupsharma/Desktop/NewHacks/Practice/')
     },
     filename: function (req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now())
@@ -70,8 +70,7 @@ async function main(){
     };
 
 
-    const [operation] = client.longRunningRecognize(request);
-    const [response] = operation.promise();
+    const [response] = await client.recognize(request);
     const transcription = response.results.map(result =>
         result.alternatives[0].transcript).join('\n');
     console.log(`Transcription: ${transcription}`);
