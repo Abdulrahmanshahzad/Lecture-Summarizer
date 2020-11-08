@@ -1,4 +1,5 @@
 # Lec2Notes
+![Image of Website](/readmepic.png)
 **Lec2Notes** takes in an audio of your lecture and makes personalized and concise notes for you that you can read on a Google Doc. 
 
 
