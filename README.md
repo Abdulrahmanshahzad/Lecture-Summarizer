@@ -13,7 +13,7 @@ git clone https://github.com/arshar2411/Lecture-Summarizer.git
 cd Lecture-Summarizer
 pip3 install -r python/requirements.txt --upgrade
 ```
-Download credentials.json from [here](https://developers.google.com/docs/api/quickstart/python). Place this file into the python folder. 
+Download credentials.json from [here](https://developers.google.com/docs/api/quickstart/python). Click "Enable the Google Docs API", choose a project name (irrelevant), click next, stay on Desktop, click next, then DOWNLOAD CLIENT CONFIGURATION. Place this file into the python folder. 
 ```shell
 python3 python/initial_authenticate.py
 ```
