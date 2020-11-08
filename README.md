@@ -1,5 +1,5 @@
-# Lecture-Summarizer
-**Lecture Summarizer** takes in an audio of your lecture and makes personalized and concise notes for you that you can read on a Google Doc. 
+# Lec2Notes
+**Lec2Notes** takes in an audio of your lecture and makes personalized and concise notes for you that you can read on a Google Doc. 
 
 
 Team members: Harishguna S., Abdulrahman S., Saumik K and Arjun Sharma
