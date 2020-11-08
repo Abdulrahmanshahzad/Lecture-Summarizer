@@ -102,6 +102,10 @@ async function main(){
     //Calling the python script that uses TensorFlow to summarise lecture
     const pythonProcess = spawn('python3',["../python/summarize.py", "input.txt"]);
 
+    pythonProcess.stdout.on('data', function(data) { 
+        console.log(data.toString()); 
+    } ) 
+
     fs.unlink(req.file.path, (err) => {
         if (err) return console.error(err);
         console.log("Temporary audio files deleted")
