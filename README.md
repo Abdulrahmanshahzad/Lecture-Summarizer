@@ -39,4 +39,4 @@ Just upload an audio file of your lecture and you will be able to view the notes
 * HTML/CSS
 
 # Credit
-Thanks to all the TAS who volunteered for the hackathon and was there to answer any questions we had regarding Google Cloud Services. 
+Thanks to all the TAs who volunteered for the hackathon and was there to answer any questions we had regarding Google Cloud Services. 
