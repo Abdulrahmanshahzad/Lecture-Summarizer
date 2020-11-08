@@ -68,7 +68,7 @@ Just upload an audio file of your lecture and you will be able to view the notes
 * @google-cloud/speech
 * @google-cloud/storage 
 * REST APIs
-+ NodeJS 
+* NodeJS 
 * Express
 * Tensorflow 
 * Python
