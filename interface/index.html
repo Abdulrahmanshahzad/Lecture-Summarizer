@@ -13,6 +13,8 @@
      body
      {
          font-family: 'Roboto', sans-serif;
+         background-image: url("https://www.xmple.com/wallpaper/gradient-purple-blue-linear-5120x2880-c2-9400d3-00ced1-a-345-f-14.svg");
+
      }
  </style>
     <title>Home Page</title>
@@ -22,8 +24,8 @@
 <!--    <input type="file" name="myFile" />-->
 <!--    <input type="submit" value="Upload a file"/>-->
 <!--</form>-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Lec2Notes</a>
+<nav class="navbar navbar-expand-lg navbar-dark " style="background: none">
+    <a class="navbar-brand" href="#" style="font-weight: bolder">Lec2Notes</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -32,42 +34,70 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sign in</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Lectures</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Account</a>
-            </li>
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="#">Sign in</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="#">Lectures</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link disabled" href="#">Account</a>-->
+<!--            </li>-->
         </ul>
     </div>
 </nav>
 <div class="container">
     <img src="/assets/note-taking-reading_0.jpg" alt="">
 </div>
-<div class="container mt-5 jumbotron" style = "font-family: 'Playfair Display', serif;">
-    Is your professor too fast? Do you ever find it difficult to take notes while simultaneously trying to understand what your professor is saying? Worry no more. Just record your lecture and upload it here and we will take care of the rest.
+<div class="container mt-5 " style = "font-family: 'Playfair Display', serif; text-align: center; font-weight: bold; color: whitesmoke; font-size: 3em">
 
+    Lec2Notes
 </div>
-<div class="container">
-    <form action="/uploadfile" enctype="multipart/form-data" method="POST">
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Upload ur profs lecture audio here</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1" name = "myFile">
-            <p></p>
-            <label for="range">How much of the lecture audio do you want to convert into notes?<span id="range2"> <script type="text/javascript">
-        document.write(displayvalue)
-      </script></span>  </label>
-            <input type="range" id="range" name="range" min="0" max="100">
-<p></p>
-            <input type="submit" value="Upload the file you chose"/>
+<div class="container mt-5 " style = "font-family: 'Playfair Display', serif; text-align: center; font-weight: bold; color: whitesmoke; font-size: 2em">
+
+     Upload your lecture audio and get concise and summarized notes ready to read on a Google Doc.
+</div>
+<!--<div class="container">-->
+<!--    <form action="/uploadfile" enctype="multipart/form-data" method="POST">-->
+<!--        <div class="form-group">-->
+<!--            <label for="exampleFormControlFile1">Upload ur profs lecture audio here</label>-->
+<!--            <input type="file" class="form-control-file" id="exampleFormControlFile1" name = "myFile">-->
+<!--            <p></p>-->
+<!--&lt;!&ndash;            <label for="range">How much of the lecture audio do you want to convert into notes?<span id="range2"> <script type="text/javascript">&ndash;&gt;-->
+<!--&lt;!&ndash;        document.write(displayvalue)&ndash;&gt;-->
+<!--&lt;!&ndash;      </script></span>  </label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="range" id="range" name="range" min="0" max="100">&ndash;&gt;-->
+<!--&lt;!&ndash;<p></p>&ndash;&gt;-->
+<!--            <input type="submit" value="Upload the file you chose"/>-->
+<!--        </div>-->
+<!--    </form>-->
+
+<!--</div>-->
+
+<div class="container-fluid mt-3">
+    <div class="row justify-content-center custom-margin">
+        <div class="col-sm-6 col-md-4">
+            <!-- Add bg-primary in form tag if want form background color-->
+            <!--text-white if want text color white-->
+            <form action="/uploadfile" enctype="multipart/form-data" method="POST" class="shadow-lg p-4 text-white">
+                <div class="form-group">
+                    <i class="fas fa-user"></i><label  class="pl-2 font-weight-bold">Upload your professor's lecture audio here</label><input type="file" class="form-control-file" id="exampleFormControlFile1" name = "myFile">
+                    <!--Add text-white below if want text color white-->
+<!--                    <small class="form-text">We'll never share your email with anyone else.</small>-->
+                </div>
+<!--                <div class="form-group">-->
+<!--                    <i class="fas fa-key"></i><label for="pass" class="pl-2 font-weight-bold">Password</label><input type="password"-->
+<!--                                                                                                                     class="form-control" placeholder="Password">-->
+<!--                </div>-->
+<!--                <div class="form-check">-->
+<!--                    <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+<!--                    <label class="form-check-label" for="exampleCheck1">Remember Me ?</label>-->
+<!--                </div>-->
+                <button type="submit" class="btn btn-outline-info mt-3 btn-block shadow-sm font-weight-bold">Upload the file you chose</button>
+            </form>
         </div>
-    </form>
-
+    </div>
 </div>
-
 <!--<h1>Display a Range Field</h1>-->
 
 <!--<form action="/action_page.php">-->
@@ -76,13 +106,13 @@
 <!--    <input type="submit">-->
 <!--</form>-->
 
-<script>
-    let displayvalue = document.getElementById("range").value;
-    document.getElementById("range2").value = displayvalue;
-    function docWrite(variable) {
-        document.write(variable);
-    }
-</script>
+<!--<script>-->
+<!--    let displayvalue = document.getElementById("range").value;-->
+<!--    document.getElementById("range2").value = displayvalue;-->
+<!--    function docWrite(variable) {-->
+<!--        document.write(variable);-->
+<!--    }-->
+<!--</script>-->
 
 </body>
 </html>
