@@ -6,6 +6,7 @@ import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+import webbrowser
 
 def upload(title, summary, text):
     """Shows basic usage of the Docs API.
@@ -48,6 +49,7 @@ def upload(title, summary, text):
 
     result = service.documents().batchUpdate(
         documentId=doc["documentId"], body={'requests': requests}).execute()
+    webbrowser.open("https://docs.google.com/document/d/" + doc["documentId"])
 
 if __name__ == "__main__":
     if (len(sys.argv) > 1):
