@@ -7,11 +7,29 @@
 Team members: Harishguna S., Abdulrahman S., Saumik K and Arjun Sharma
 
 ## Instructions
-pip3 install --user --upgrade tensorflow 
-pip3 install transformers
+This guide assumes that you have python3, pip, node, and npm installed.
+```shell
+git clone https://github.com/arshar2411/Lecture-Summarizer.git
+cd Lecture-Summarizer
+pip3 install -r python/requirements.txt --upgrade
+```
+Download credentials.json from [here](https://developers.google.com/docs/api/quickstart/python). Place this file into the python folder. 
+```shell
+python3 python/initial_authenticate.py
+```
+The next step is to create a Google Cloud Platform account with billing setup and a project created, with the necessary permissions, roles, storage bucket, etc. The account we used to test doesn't have enough credit to support all our users/testers. Download the service key json file to your computer.
+```shell
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service_key.json
+cd interfaces
+npm install
+node app.js
+```
+Now just open localhost:3000 on your preferred browser and upload a .wav file containing your lecture. The whole process will take some time, especially if the file is as large as a full lecture. You may leave your computer unattended at this point. A new browser tab with a Google Doc containing the summary will open when the program is finished. At this point you may quit app.js from terminal.
+
+
 
 ## Code Example
-Long audio files (i.e. longer than a minnute) are first transcribed using Google CLous's Speech-to-Text Library. 
+Long audio files (i.e. longer than a minute) are first transcribed using Google Cloud's Speech-to-Text Library. 
 Speech is detected in the audio file using the `longRunningRecognize` function. A `Promise` representation of the final result is then obtained. 
 ```javascript
 
@@ -26,7 +44,7 @@ const [operation] = await client.longRunningRecognize(request);
 
     });
 ```
-The transcribed text is later used to make a summary of the lecture using Pytorch and TensorFlow 2.0's Natural Language Processing, Transformers. 
+The transcribed text is later used to make a summary of the lecture using Pytorch/TensorFlow 2.0 based Natural Language Processing using the Transformers library. 
 ```python3
 
 from transformers import pipeline
@@ -49,7 +67,8 @@ Just upload an audio file of your lecture and you will be able to view the notes
 ## Tech/framework used
 * @google-cloud/speech
 * @google-cloud/storage 
-* NodeJS 
+* REST APIs
++ NodeJS 
 * Express
 * Tensorflow 
 * Python
